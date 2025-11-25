@@ -1,0 +1,940 @@
+Essential Sections for AgriGuard Help/Documentation Page
+1. Hero Section with Search
+
+Large, prominent search bar at the top for quick content discovery HeroThemesMadCap Software
+Brief tagline: "Get instant answers about plant disease detection"
+Quick stats: "100+ articles • Updated daily • 5 min avg. read time"
+
+2. Getting Started Guide
+
+Quick Start Tutorial (Step-by-step with screenshots)
+
+Creating an account
+Taking your first photo
+Understanding results
+Accessing your history
+
+
+Video Walkthrough (2-3 min overview video)
+Interactive Demo (Optional: Clickable prototype)
+
+3. FAQ Section (Organized by Category)
+Account & Authentication
+
+How do I create an account?
+How do I reset my password?
+Is my data secure?
+Can I use AgriGuard offline?
+
+Image Upload & Photography
+
+What image formats are supported?
+What's the maximum file size?
+How do I take a good leaf photo?
+
+Lighting tips (natural daylight, avoid shadows)
+Distance guidelines (fill 70% of frame)
+Angle suggestions (flat, top-down view)
+What to avoid (blurry images, multiple leaves, wet leaves)
+
+
+Can I upload multiple images at once?
+What if my image is rejected?
+
+Disease Detection
+
+How accurate is the AI model?
+What crops/plants are supported?
+How long does analysis take?
+What does confidence score mean?
+What if confidence is below 70%?
+Can it detect multiple diseases on one leaf?
+
+Understanding Results
+
+How do I interpret the diagnosis?
+What are severity levels (Mild/Moderate/Severe)?
+What if the diagnosis seems wrong?
+Can I get a second opinion?
+How do I download my report?
+
+Recommendations & Treatment
+
+Are the recommendations organic/chemical?
+Where can I buy recommended products?
+How urgent is treatment?
+What if I can't find recommended products?
+Safety precautions for applying treatments
+
+Dashboard & History
+
+How do I access past diagnoses?
+Can I export my history?
+How long is data stored?
+Can I delete old records?
+How do I share results with experts?
+
+Troubleshooting
+
+Upload failed - what do I do?
+App is slow or freezing
+Results not loading
+Can't access dashboard
+Browser compatibility issues
+
+4. Supported Crops & Diseases
+Comprehensive Disease Database
+
+Searchable/filterable table with:
+
+Crop type (Tomato, Potato, Corn, etc.)
+Disease name (Early Blight, Late Blight, etc.)
+Scientific name
+Common symptoms
+Severity indicator
+Typical confidence range
+Season/climate factors
+
+
+Visual gallery with sample images of each disease
+
+Crop-Specific Guides
+
+Detailed pages for each crop type
+Common diseases for that crop
+Prevention strategies
+Growing season considerations
+
+5. Best Practices Guide
+Photography Tips
+
+✓ Do's and ✗ Don'ts with visual examples
+Optimal conditions checklist
+Equipment recommendations (no special equipment needed!)
+Sample images: Good vs. Bad examples
+
+When to Diagnose
+
+Early morning vs. midday vs. evening
+Before vs. after rain
+Disease progression stages
+
+Maximizing Accuracy
+
+Upload high-resolution images
+Focus on affected areas
+Clean the leaf surface
+Use proper lighting
+
+6. Technical Specifications
+System Requirements
+
+Browser compatibility (Chrome, Firefox, Safari, Edge)
+Mobile OS support (iOS 13+, Android 8+)
+Recommended internet speed
+Device storage requirements
+
+Model Information
+
+AI model version
+Training dataset size
+Last updated date
+Accuracy metrics by crop type
+Supported classes/diseases
+
+Privacy & Security
+
+Data encryption methods
+GDPR/privacy compliance
+Data retention policy
+How to request data deletion
+Third-party integrations
+
+7. Glossary/Dictionary
+Alphabetized terms with definitions:
+
+Confidence Score
+Early Blight
+Fungicide
+Grad-CAM (Explainability)
+Heatmap
+IPM (Integrated Pest Management)
+Late Blight
+Organic vs. Chemical treatments
+Pathogen
+Quarantine procedures
+Severity Level
+
+8. Use Case Examples / Success Stories
+
+Small Farmer in India: "Saved my tomato crop using AgriGuard"
+Home Gardener: "Identified disease before it spread"
+Agricultural Consultant: "Using AgriGuard for field assessments"
+Include before/after photos, testimonials, impact metrics
+
+9. Contact & Support
+Self-Service Options
+
+Community forum link
+Submit feedback form
+Report a bug
+Request new feature
+
+Direct Support
+
+Email: support@agriguard.com
+Live chat availability hours
+Expected response time (24-48 hrs)
+Emergency contact for critical issues
+
+Social Media & Community
+
+Twitter, Facebook, Instagram links
+YouTube channel (tutorial videos)
+Discord/Slack community for farmers
+
+10. Resources & Downloads
+
+Downloadable PDFs
+
+Plant Disease Prevention Guide
+Photography Tips Cheat Sheet
+Crop Calendar
+Treatment Safety Guidelines
+
+
+Mobile App Links (iOS/Android if available)
+API Documentation (for developers)
+Research Papers (links to studies used)
+
+11. Updates & Changelog
+
+Version history
+New features announcements
+Bug fixes
+New crop/disease additions
+Performance improvements
+
+
+Design Implementation Tips
+Navigation Structure
+Use a clear, hierarchical sidebar navigation with expandable sections, logical URL structure like /help/getting-started/photography-tips 42 Coffee Cups
+Visual Elements
+
+Icon for each section (camera, leaf, chart, question mark)
+Color coding: Green (general), Blue (technical), Orange (troubleshooting)
+Progress indicators for multi-step guides
+Collapsible accordions for long content
+Breadcrumb navigation
+"Was this helpful?" feedback buttons on each article
+
+Search Functionality
+Implement faceted search with filters for category, topic, and user role 42 Coffee Cups
+
+Auto-suggestions as user types
+Related articles at bottom of each page
+Popular searches displayed
+Search analytics to improve content
+
+Interactive Features
+
+Embedded videos with timestamps
+Interactive image comparison sliders (healthy vs. diseased)
+Copy-to-clipboard for code snippets (if API docs)
+Tooltips for technical terms
+Clickable image galleries
+
+Mobile Optimization
+
+Sticky search bar on mobile
+Hamburger menu for navigation
+Swipeable image galleries
+Touch-friendly buttons (min 44px)
+Readable font sizes (16px minimum)
+
+Accessibility
+
+ARIA labels for screen readers
+Keyboard navigation (Tab, Enter, Escape)
+High contrast mode support
+Skip to content link
+Alt text for all images
+
+
+Example Component Structure
+jsx// HelpPage.jsx
+<div className="help-page">
+  <SearchBar placeholder="Search for help..." />
+  
+  <QuickLinks items={['Getting Started', 'Upload Photo', 'FAQs', 'Contact']} />
+  
+  <CategoryGrid>
+    <Category icon="camera" title="Getting Started" />
+    <Category icon="leaf" title="Disease Database" />
+    <Category icon="question" title="FAQs" />
+    <Category icon="chart" title="Dashboard Help" />
+  </CategoryGrid>
+  
+  <PopularArticles />
+  
+  <ContactSection />
+</div>
+This comprehensive structure will make your AgriGuard Help page feel like a professional, enterprise-grade application while remaining user-friendly and accessible to farmers of all technical levels.RetrySgive me a detailed prompt to put in my google gemini antigravity with model claude sonnet 4.5 to do this and also add demo(should look real and from good source) content also etc. and also command gemini nanobanana to make images etc wherever necessaryplant disease symptoms examples tomato potato corn10 resultsTomato Diseases & Disorders | Home & Garden Information Centerclemson.eduTomato Diseases and Disorders in the Home Gardenpsu.eduKey to Common Problems of Tomatoes | University of Maryland Extensionumd.eduHow to Identify and Treat Common Tomato Diseases | Gardener’s Pathgardenerspath.comPlant disease - Symptoms, Causes, Treatments | Britannicabritannica.comEarly blight in tomato and potato | UMN Extensionumn.eduManaging Tomato Diseases, Disorders, and Pests | Yard and Gardeniastate.eduRecognizing Tomato Problems - 2.949 - Extensioncolostate.eduCommon Diseases of Tomatoes- Part II: Diseases Caused by Bacteria, Viruses and Nematodes | Oklahoma State Universityokstate.eduPotato Virus Y | Animal and Plant Health Inspection Serviceusda.govHere's a comprehensive prompt for Gemini to create the Help/Documentation page with Claude Sonnet 4:
+
+DETAILED PROMPT FOR GEMINI ANTIGRAVITY (Claude Sonnet 4.5)
+You are building a comprehensive Help/Documentation page for AgriGuard - an AI-powered plant disease detection web application. This page must look professional, credible, and contain realistic agricultural content from authoritative sources.
+
+PROJECT CONTEXT
+AgriGuard is a React-based web app using:
+
+Frontend: React, React Router, Tailwind CSS
+Backend: Django REST Framework
+Features: Image upload, AI disease detection, confidence scoring, treatment recommendations, dashboard analytics
+
+
+YOUR TASK
+Create a complete, production-ready Help/Documentation page as a React component with:
+
+Realistic, research-backed content (not placeholder text)
+Professional medical-journal-style writing for disease information
+Practical, actionable advice for farmers
+Modern, accessible UI design
+Interactive elements (search, filters, accordions, tabs)
+Mobile-responsive layout
+
+
+COMPONENT STRUCTURE & CONTENT
+1. HERO SECTION WITH SEARCH
+jsx- Large search bar with icon
+- Placeholder: "Search for help... (e.g., 'tomato blight', 'upload error')"
+- Tagline: "Get instant answers about plant disease detection"
+- Quick stats badges: "150+ articles • Updated weekly • 24/7 support"
+
+2. QUICK ACCESS CARDS GRID
+Create 6 category cards with icons (use lucide-react icons):
+IconTitleDescriptionLink🚀 RocketGetting StartedLearn how to upload your first image and get results#getting-started📷 CameraPhotography TipsTake better leaf photos for accurate diagnosis#photography🍃 LeafDisease DatabaseBrowse 50+ plant diseases we can detect#diseases📊 BarChartDashboard GuideUnderstand your analytics and history#dashboard❓ HelpCircleFAQsQuick answers to common questions#faq📧 MailContact SupportGet help from our team#contact
+
+3. GETTING STARTED SECTION (Expandable Accordion)
+Step 1: Create Your Account
+
+Click "Sign Up" in the top right
+Enter email, password, and farm location
+Verify email (check spam folder)
+Complete profile (optional: farm size, crop types)
+
+Step 2: Upload Your First Image
+
+Click "Start Diagnosis" or navigate to Diagnosis page
+Drag and drop an image OR click to browse
+✅ Accepted formats: JPG, PNG, JPEG, WEBP
+✅ Max file size: 5MB
+❌ Avoid: Blurry images, multiple leaves in one photo, wet leaves
+
+Step 3: Review Results
+
+Wait 3-5 seconds for AI analysis
+View disease name, confidence score, and severity
+Read personalized treatment recommendations
+Download PDF report or save to history
+
+Step 4: Track Your Crops
+
+Access Dashboard to see all past diagnoses
+Filter by date, crop type, or disease
+Export data as CSV for record-keeping
+Monitor disease trends over time
+
+
+4. PHOTOGRAPHY BEST PRACTICES (Visual Grid with Do's & Don'ts)
+✅ DO:
+
+Take photos in natural daylight (morning or late afternoon)
+Fill 70-80% of frame with the affected leaf
+Keep camera steady (use both hands or tripod)
+Focus on diseased areas
+Use clean, dry leaves when possible
+Take photos from directly above (90° angle)
+Include leaf veins and texture details
+
+❌ DON'T:
+
+Use flash or artificial lighting
+Take photos in shadows or direct harsh sunlight
+Include multiple leaves or background clutter
+Upload blurry or pixelated images
+Photograph wet or dewy leaves
+Take photos at extreme angles
+Use heavily edited or filtered images
+
+📱 MOBILE TIPS:
+
+Clean your camera lens first
+Tap screen to focus before capturing
+Use gridlines for alignment
+Hold phone horizontally for wider view
+Take 2-3 photos from different angles
+
+
+5. SUPPORTED DISEASES DATABASE (Searchable/Filterable Table)
+Use realistic disease data from agricultural sources. Create a table with these columns:
+
+Crop Type | Disease Name | Scientific Name | Severity | Symptoms | Detection Rate
+
+Include these REAL diseases (use information from the search results):
+TOMATO DISEASES:
+
+Early Blight (Alternaria solani)
+
+Symptoms: Round brown spots with target-like rings on older leaves, yellowing around spots
+Severity: Moderate to Severe
+Detection Confidence: 92-96%
+Season: Mid-summer, hot weather (77-86°F)
+Treatment: Remove affected leaves, apply copper fungicide, improve air circulation
+
+
+Late Blight (Phytophthora infestans)
+
+Symptoms: Dark water-soaked spots that enlarge rapidly, white mold on leaf undersides, complete defoliation within 14 days
+Severity: Severe (can destroy entire crop)
+Detection Confidence: 94-98%
+Season: Cool, wet weather
+Treatment: Immediate removal of infected plants, fungicide application, avoid overhead watering
+
+
+Septoria Leaf Spot (Septoria lycopersici)
+
+Symptoms: Small dark spots with tan/white centers, tiny black specks visible
+Severity: Moderate
+Detection Confidence: 88-93%
+Treatment: Remove lower leaves, use organic mulch, apply fungicides preventatively
+
+
+Bacterial Spot
+
+Symptoms: Small brown spots with yellow halos on leaves and fruit
+Severity: Moderate
+Detection Confidence: 85-91%
+Treatment: Use disease-free seeds, copper-based bactericides, crop rotation
+
+
+Bacterial Canker
+
+Symptoms: Brown streaks on stems, "bird's eye" spots on fruit
+Severity: Severe
+Detection Confidence: 82-89%
+Treatment: Destroy infected plants, 2-3 year crop rotation, sanitize tools
+
+
+
+POTATO DISEASES:
+
+Potato Virus Y (PVY)
+
+Symptoms: Yellow mottling on leaves, tuber necrosis, stunted growth
+Severity: Severe
+Detection Confidence: 87-93%
+Treatment: Use certified seed potatoes, control aphid vectors, remove infected plants
+
+
+Early Blight (Alternaria solani)
+
+Symptoms: Target-spot lesions on leaves, collar rot on seedlings
+Severity: Moderate
+Detection Confidence: 91-95%
+Treatment: Fungicide sprays, resistant varieties, proper spacing
+
+
+
+CORN DISEASES:
+
+Stewart's Wilt (Erwinia stewartii)
+
+Symptoms: Leaf wilting, yellow-green streaks, bacterial ooze
+Severity: Moderate to Severe
+Detection Confidence: 84-90%
+Treatment: Plant resistant hybrids, control flea beetles, crop rotation
+
+
+
+PEPPER DISEASES:
+
+Bacterial Leaf Spot
+
+Symptoms: Dark brown spots with yellow halos
+Severity: Moderate
+Detection Confidence: 86-92%
+Treatment: Copper sprays, avoid overhead irrigation, resistant varieties
+
+
+
+
+6. COMPREHENSIVE FAQ SECTION (Organized with Tabs/Accordion)
+ACCOUNT & AUTHENTICATION (5-8 questions)
+
+How do I create an account?
+How do I reset my password?
+Is my data secure and private?
+Can I delete my account and data?
+Do you sell my farm data to third parties? (NO - explicitly state privacy policy)
+
+IMAGE UPLOAD (8-10 questions)
+
+What image formats do you accept?
+
+Answer: JPG, JPEG, PNG, WEBP (max 5MB)
+
+
+Why was my image rejected?
+
+Common reasons: File too large, wrong format, corrupted file, non-plant image
+
+
+Can I upload multiple images at once?
+
+Answer: Currently one image per diagnosis (batch upload coming soon)
+
+
+How do I take a good leaf photo?
+
+Link to Photography Tips section
+
+
+What if my image is blurry?
+
+Answer: System will prompt you to retake photo; blurry images reduce accuracy
+
+
+Can I use images from the internet?
+
+Answer: Yes, but we recommend your own photos for accurate local diagnosis
+
+
+Does the app work offline?
+
+Answer: No, internet required for AI analysis (PWA coming soon)
+
+
+How long does analysis take?
+
+Answer: 3-8 seconds depending on server load
+
+
+
+DIAGNOSIS & RESULTS (10-12 questions)
+
+How accurate is the AI model?
+
+Answer: 85-98% accuracy depending on disease type and image quality
+
+
+What does confidence score mean?
+
+Answer: Percentage indicating AI's certainty (>90% = very confident, 70-89% = likely correct, <70% = uncertain - manual review recommended)
+
+
+What if confidence is below 70%?
+
+Answer: System will suggest retaking photo or consulting local agricultural expert
+
+
+What crops/plants can you detect?
+
+Answer: Tomato, potato, corn, pepper, wheat, rice, beans (50+ total) - see full list in Disease Database
+
+
+Can you detect multiple diseases on one leaf?
+
+Answer: Not yet - currently detects primary/dominant disease
+
+
+What if the diagnosis seems wrong?
+
+Answer: Use "Report Incorrect Diagnosis" button - helps improve AI model
+
+
+Do you provide treatment recommendations?
+
+Answer: Yes - both organic and chemical options with safety guidelines
+
+
+Can I get a second opinion?
+
+Answer: Yes - share results with local agronomist or extension officer via PDF export
+
+
+How do I download my diagnosis report?
+
+Answer: Click "Download PDF" button on results page
+
+
+
+TREATMENT & RECOMMENDATIONS (6-8 questions)
+
+Are recommendations organic or chemical?
+
+Answer: Both options provided - you choose based on preference
+
+
+Where can I buy recommended products?
+
+Answer: Links to local agricultural suppliers (region-dependent)
+
+
+How urgent is treatment?
+
+Answer: Indicated by severity level (Mild = 1-2 weeks, Moderate = 3-5 days, Severe = immediate action)
+
+
+What if I can't find recommended products?
+
+Answer: Generic alternatives listed, contact support for substitutions
+
+
+Are treatments safe for food crops?
+
+Answer: All recommendations are pre-harvest approved; follow label instructions
+
+
+Can I treat organically?
+
+Answer: Yes - organic options always provided (neem oil, copper soap, cultural practices)
+
+
+
+DASHBOARD & HISTORY (5-7 questions)
+
+How do I view past diagnoses?
+
+Answer: Click "Dashboard" in navigation - sortable by date, crop, disease
+
+
+Can I export my history?
+
+Answer: Yes - CSV and JSON export available
+
+
+How long is data stored?
+
+Answer: Indefinitely unless you delete (manual or auto-delete options available)
+
+
+Can I delete old records?
+
+Answer: Yes - individual or bulk delete in Dashboard
+
+
+How do I share results with my agronomist?
+
+Answer: Use "Share" button to generate link or export PDF
+
+
+
+TROUBLESHOOTING (8-10 questions)
+
+Upload keeps failing - what do I do?
+
+Check internet connection, file size <5MB, accepted format, try different browser
+
+
+App is very slow
+
+Clear browser cache, close other tabs, check internet speed (min 2Mbps recommended)
+
+
+Results not loading
+
+Refresh page, check server status, try again in 5 minutes
+
+
+Can't access dashboard
+
+Log out and log back in, clear cookies, check account status
+
+
+Browser compatibility issues
+
+Supported: Chrome 90+, Firefox 88+, Safari 14+, Edge 90+
+
+
+Images not uploading on mobile
+
+Grant camera/photo access permissions, check storage space
+
+
+Diagnosis stuck at "Processing..."
+
+Normal for large files (up to 15 seconds), if >30 seconds refresh page
+
+
+Error: "Invalid image format"
+
+Convert image to JPG/PNG using photo editor or online converter
+
+
+
+
+7. DISEASE GLOSSARY (Alphabetized Terms)
+Create definitions for these terms:
+
+Anthracnose: Fungal disease causing circular sunken spots on fruit
+Bactericide: Chemical that kills bacteria
+Blight: Rapid plant disease causing browning and death
+Chlorosis: Yellowing of leaf tissue due to chlorophyll loss
+Confidence Score: AI model's certainty percentage (0-100%)
+Defoliation: Loss of leaves from plant
+Fungicide: Chemical that kills or prevents fungal growth
+Grad-CAM (Gradient-weighted Class Activation Mapping): AI visualization showing which leaf areas influenced diagnosis
+Heatmap: Color-coded image highlighting diseased regions
+IPM (Integrated Pest Management): Eco-friendly approach combining biological, cultural, and chemical control
+Lesion: Localized area of diseased tissue
+Necrosis: Death of plant cells or tissue
+Pathogen: Disease-causing organism (fungus, bacteria, virus)
+Quarantine: Isolation of infected plants to prevent spread
+Severity Level: Disease impact rating (Mild/Moderate/Severe)
+Sporulation: Production of fungal spores
+Systemic Disease: Infection affecting entire plant through vascular system
+Vector: Organism (insect, wind) that spreads disease
+Wilt: Drooping of leaves/stems due to water loss or vascular blockage
+
+
+8. CONTACT & SUPPORT SECTION
+jsx<div className="contact-grid">
+  {/* Self-Service */}
+  <Card>
+    <Icon: MessageSquare />
+    <Title>Community Forum</Title>
+    <Description>Ask questions and share experiences</Description>
+    <Link>Visit Forum →</Link>
+  </Card>
+
+  <Card>
+    <Icon: Bug />
+    <Title>Report a Bug</Title>
+    <Description>Help us improve AgriGuard</Description>
+    <Button>Submit Issue</Button>
+  </Card>
+
+  <Card>
+    <Icon: Lightbulb />
+    <Title>Request Feature</Title>
+    <Description>Suggest new functionality</Description>
+    <Button>Share Idea</Button>
+  </Card>
+
+  {/* Direct Support */}
+  <Card>
+    <Icon: Mail />
+    <Title>Email Support</Title>
+    <Description>support@agriguard.com</Description>
+    <Badge>Response time: 24-48 hours</Badge>
+  </Card>
+
+  <Card>
+    <Icon: MessageCircle />
+    <Title>Live Chat</Title>
+    <Description>Mon-Fri, 9 AM - 5 PM EST</Description>
+    <Button disabled={!chatOnline}>Start Chat</Button>
+  </Card>
+
+  <Card>
+    <Icon: Phone />
+    <Title>Emergency Hotline</Title>
+    <Description>+1-800-AGRI-HELP</Description>
+    <Subtitle>For critical crop issues</Subtitle>
+  </Card>
+</div>
+
+{/* Social Media */}
+<SocialLinks>
+  <Link to="https://twitter.com/agriguard"><Twitter /> @AgriGuard</Link>
+  <Link to="https://facebook.com/agriguard"><Facebook /> /AgriGuard</Link>
+  <Link to="https://youtube.com/@agriguard"><Youtube /> /AgriGuard</Link>
+  <Link to="https://discord.gg/agriguard"><Discord /> Community Server</Link>
+</SocialLinks>
+
+9. RESOURCES & DOWNLOADS
+Create downloadable PDF links (simulate with buttons):
+
+📄 Plant Disease Prevention Guide (2.3 MB, 24 pages)
+📄 Photography Tips Cheat Sheet (850 KB, 2 pages)
+📄 Organic Treatment Handbook (1.8 MB, 16 pages)
+📄 Crop Rotation Planner (450 KB, 1 page)
+📄 Safety Guidelines for Pesticide Application (1.2 MB, 8 pages)
+
+Mobile Apps:
+
+📱 Download for iOS (App Store badge)
+📱 Download for Android (Google Play badge)
+
+Developer Resources:
+
+💻 API Documentation (for agricultural tech companies)
+💻 Open Dataset (Research use only - 10,000+ labeled images)
+
+
+10. UPDATES & CHANGELOG
+jsx<ChangelogTimeline>
+  <Entry date="November 2025">
+    <Badge type="new">NEW</Badge>
+    <Title>Version 2.3.0</Title>
+    <Changes>
+      - Added support for wheat rust diseases
+      - Improved confidence scoring algorithm (+5% accuracy)
+      - Dark mode now available
+      - Export data to Excel format
+    </Changes>
+  </Entry>
+
+  <Entry date="October 2025">
+    <Badge type="improvement">IMPROVED</Badge>
+    <Title>Version 2.2.5</Title>
+    <Changes>
+      - Faster image processing (reduced from 8s to 3s)
+      - Mobile camera integration
+      - Dashboard analytics redesign
+      - Bug fixes for Safari iOS
+    </Changes>
+  </Entry>
+
+  <Entry date="September 2025">
+    <Badge type="new">NEW</Badge>
+    <Title>Version 2.2.0</Title>
+    <Changes>
+      - Added 15 new corn diseases
+      - Spanish language support
+      - Batch image upload (beta)
+      - API rate limit increased to 1000/day
+    </Changes>
+  </Entry>
+</ChangelogTimeline>
+
+DESIGN SPECIFICATIONS
+Typography:
+
+Headlines: font-bold text-3xl (H1), font-semibold text-2xl (H2)
+Body text: text-gray-700 text-base leading-relaxed
+Code/technical terms: font-mono bg-gray-100 px-2 py-1 rounded
+
+Color Palette:
+
+Success/Healthy: bg-green-50 text-green-700 border-green-200
+Warning/Moderate: bg-yellow-50 text-yellow-700 border-yellow-200
+Danger/Severe: bg-red-50 text-red-700 border-red-200
+Info: bg-blue-50 text-blue-700 border-blue-200
+
+Components:
+
+Use Tailwind CSS for all styling
+Implement search with fuzzy matching (fuse.js)
+Create collapsible accordion sections
+Add breadcrumb navigation
+Include "Back to top" floating button
+Add "Was this helpful? 👍 👎" feedback buttons
+
+Accessibility:
+
+All images have alt text
+ARIA labels on interactive elements
+Keyboard navigation (Tab, Enter, Escape)
+Focus indicators visible
+Color contrast WCAG AA compliant
+
+
+ADDITIONAL REQUIREMENTS
+
+Generate ALL content - No placeholders like "Lorem ipsum" or "Content goes here"
+Use real agricultural terminology and accurate disease information
+Make it scannable - Use headings, bold text, bullet points, visual hierarchy
+Add interactive elements - Tabs, accordions, tooltips, search filters
+Mobile-first responsive - Test all layouts on 375px, 768px, 1440px widths
+Professional tone - Authoritative but accessible to farmers with varying education levels
+
+
+COMMAND TO GEMINI NANOBANANA FOR IMAGE GENERATION
+@nanobanana - Please generate the following images in appropriate styles:
+
+Hero Banner Image (1920x400px)
+
+Theme: Modern agricultural technology
+Elements: Farmer holding smartphone with plant, digital overlays, green fields
+Style: Photorealistic with subtle tech elements
+
+
+Photography Guide Images (600x400px each)
+
+✅ Good Example: Clear leaf photo, natural light, focused, 90° angle
+❌ Bad Example: Blurry, shadowy, multiple leaves, poor framing
+Style: Side-by-side comparison with annotations
+
+
+Disease Symptom Visual Gallery (400x400px each)
+
+Early Blight on tomato leaf (brown spots with target rings)
+Late Blight on tomato leaf (dark water-soaked areas, white mold)
+Septoria Leaf Spot (small dark spots, tan centers)
+Potato Virus Y (yellow mottling, leaf curl)
+Bacterial Spot on pepper (brown spots with yellow halos)
+Style: High-quality close-up photography, clinical documentation style
+
+
+Category Card Icons (128x128px each)
+
+Getting Started: Rocket launching
+Photography Tips: Professional camera
+Disease Database: Microscope with leaf
+Dashboard: Analytics graphs
+FAQs: Question mark bubble
+Contact: Mail envelope
+Style: Line art icons with subtle green gradients
+
+
+Step-by-Step Tutorial Illustrations (800x600px each)
+
+Step 1: Smartphone camera pointed at leaf
+Step 2: Upload interface with drag-drop zone
+Step 3: AI processing visualization (neural network)
+Step 4: Results dashboard with charts
+Style: Isometric illustration, clean vector art
+
+
+Mobile App Mockups (375x812px)
+
+AgriGuard app on iPhone showing diagnosis screen
+AgriGuard app on Android showing history page
+Style: Realistic device mockups with UI screenshots
+
+
+Infographic: Disease Severity Levels (1200x800px)
+
+Visual scale from Mild → Moderate → Severe
+Color-coded (green → yellow → red)
+Icons and timelines for treatment urgency
+Style: Modern infographic with icons and data visualization
+
+
+
+Generate all images with professional quality, appropriate for a B2B agricultural tech platform. Use natural colors (greens, blues, earth tones) and maintain consistent visual language across all assets.
+
+EXPECTED OUTPUT
+Deliver a single, complete React component file named HelpPage.jsx containing:
+
+All imports (React, lucide-react icons, useState, etc.)
+Fully implemented sections with real content
+Inline Tailwind CSS styling
+Working interactive features (search, filters, accordions)
+Mobile responsive design
+Comments explaining complex sections
+Export statement at end
+
+File size estimate: 1500-2000 lines of code
+Content density: Zero placeholders - every section must have complete, realistic content
+
+BONUS POINTS
+
+Add smooth scroll animations
+Implement keyboard shortcuts (Ctrl+K for search)
+Create printable CSS version
+Add reading time estimates for long articles
+Include "Copy link" buttons for sharing specific sections
+Implement dark mode toggle
+Add multilingual support structure (English as primary)

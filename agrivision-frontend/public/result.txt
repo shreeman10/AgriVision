@@ -1,0 +1,343 @@
+You are building a Results/Diagnosis Report page for AgriGuard - an AI-powered plant disease detection web application.
+
+PROJECT CONTEXT
+
+Frontend: React, React Router, Tailwind CSS, lucide-react icons
+Backend: Django REST Framework
+User uploads leaf image → AI analyzes → Results displayed on this page
+
+
+YOUR TASK
+Create a complete, professional Results/Diagnosis Report page as a React component that displays after image classification.
+
+PAGE SECTIONS
+1. HEADER SECTION
+
+Breadcrumb navigation: Home > Diagnosis > Results
+Timestamp of diagnosis
+Unique diagnosis ID (e.g., "DG-2025-1122-A3F7")
+
+2. IMAGE DISPLAY
+
+Show uploaded leaf image (responsive size)
+Optional: Show Grad-CAM heatmap overlay toggle
+Image metadata: filename, size, resolution
+
+3. DISEASE CLASSIFICATION RESULT (Hero Card)
+Display:
+
+Disease Status: Large badge (Healthy/Diseased)
+
+Healthy: Green background with checkmark icon
+Diseased: Red/orange background with alert icon
+
+
+Disease Name: Bold, large text (e.g., "Early Blight", "Late Blight", "Bacterial Spot")
+
+If healthy: "No Disease Detected"
+
+
+Scientific Name: Smaller italic text (e.g., "Alternaria solani")
+Confidence Score:
+
+Large percentage display (e.g., "94%")
+Visual progress bar or circular gauge
+Color coded: >90% green, 70-89% yellow, <70% red
+Tooltip: "AI model's certainty level"
+
+
+Severity Level (if diseased):
+
+Badge with icon: Mild (yellow), Moderate (orange), Severe (red)
+Visual indicator: 1-3 stars or alert icons
+
+
+Affected Crop Type: Tag/chip (e.g., "Tomato", "Potato")
+
+4. DISEASE DETAILS SECTION (if diseased)
+Information Cards:
+Symptoms Card:
+
+List of characteristic symptoms
+Example: "Round brown spots with target-like rings on older leaves"
+Example: "Yellowing around infected areas"
+Example: "Progresses from lower to upper leaves"
+
+Causes Card:
+
+Pathogen type (Fungal/Bacterial/Viral)
+Environmental conditions that favor disease
+Example: "Thrives in warm (77-86°F), humid conditions"
+Example: "Spread by wind, rain splash, and contaminated tools"
+
+Impact Card:
+
+Potential yield loss percentage
+Spread rate (slow/moderate/fast)
+Affected plant parts (leaves/stems/fruit/roots)
+Economic impact statement
+
+5. TREATMENT RECOMMENDATIONS (Expandable Sections)
+Immediate Actions (0-24 hours):
+
+Remove and destroy infected leaves
+Quarantine affected plants if possible
+Stop overhead watering
+Improve air circulation
+
+Short-term Treatment (1-7 days):
+
+Apply recommended fungicide/bactericide
+Organic options with product names
+Chemical options with product names
+Application frequency and dosage
+Safety precautions and PPE requirements
+
+Long-term Management:
+
+Crop rotation schedule (2-3 years)
+Resistant variety recommendations
+Soil amendment suggestions
+Preventive spray schedules
+Cultural practice improvements
+
+Organic Treatment Options:
+
+Neem oil (concentration and frequency)
+Copper-based fungicides
+Bacillus subtilis sprays
+Compost tea applications
+Physical removal techniques
+
+Chemical Treatment Options:
+
+Product names (e.g., "Chlorothalonil", "Mancozeb")
+Active ingredients
+Application rates
+Pre-harvest intervals (PHI)
+Re-entry intervals (REI)
+Where to purchase (local supplier links)
+
+6. PREVENTION TIPS
+
+Best practices to avoid future infections
+Proper spacing guidelines
+Watering techniques
+Mulching recommendations
+Tool sanitization procedures
+Companion planting suggestions
+
+7. CONFIDENCE & EXPLAINABILITY
+Confidence Breakdown:
+
+If multi-class model, show probability distribution
+Bar chart showing top 3-5 predictions with percentages
+Example: Early Blight 94%, Late Blight 4%, Septoria 2%
+
+AI Explainability (if available):
+
+Grad-CAM heatmap showing affected regions
+Side-by-side: Original image | Heatmap overlay
+Color legend: Red (high attention) → Yellow → Blue (low attention)
+Explanation text: "The AI focused on these areas to make its diagnosis"
+
+Model Information:
+
+Model version: v2.3.0
+Training accuracy: 96.2%
+Last updated: November 2025
+Confidence threshold: Results <70% flagged for review
+
+8. SIMILAR DISEASES WARNING (if confidence 70-89%)
+
+Alert banner: "Confidence is moderate. This disease may be confused with:"
+List 2-3 similar diseases with differential symptoms
+Suggestion: "Consult local agricultural extension for confirmation"
+
+9. ACTION BUTTONS
+Primary actions:
+
+Download Report (PDF with all info + images)
+Save to History (adds to dashboard)
+Upload Another Image (return to diagnosis page)
+Share Results (generate shareable link or QR code)
+
+Secondary actions:
+
+Report Incorrect Diagnosis (feedback form)
+Consult Expert (contact agricultural advisor)
+View Similar Cases (community examples)
+Set Treatment Reminder (calendar integration)
+
+10. RELATED INFORMATION
+Quick Links Section:
+
+Read full disease profile in Help Database
+View crop-specific care guide
+Browse treatment product catalog
+Watch video tutorial on application
+Join community forum discussion
+
+Success Stories (Optional):
+
+"Farmers who treated Early Blight early saw 85% yield recovery"
+Link to case studies
+
+11. DISCLAIMER
+Footer text (small, gray):
+"This diagnosis is provided by AI and should be used as a guide. For critical crop decisions, consult certified agricultural professionals. AgriGuard is not liable for crop losses resulting from following these recommendations. Always read and follow pesticide labels."
+
+SAMPLE REALISTIC CONTENT
+Example: Early Blight Detected
+Disease: Early Blight
+Scientific Name: Alternaria solani
+Confidence: 94%
+Severity: Moderate
+Crop: Tomato
+
+Symptoms:
+- Circular brown spots with concentric rings (target pattern)
+- Yellowing around lesions
+- Oldest leaves affected first
+- Spots enlarge and coalesce over time
+
+Immediate Actions:
+1. Remove all infected lower leaves and destroy (do not compost)
+2. Apply copper-based fungicide within 24 hours
+3. Water at base of plants only - avoid wetting foliage
+4. Space plants 24-36 inches apart for better air flow
+
+Treatment Products:
+Organic: Bonide Copper Fungicide (apply every 7-10 days)
+Chemical: Chlorothalonil 720 (apply every 7 days, max 4 applications)
+
+Expected Outcome: With prompt treatment, 70-80% of crop can be saved
+Example: Healthy Leaf
+Status: Healthy ✓
+Confidence: 97%
+Crop: Tomato
+
+Great news! No diseases detected on this leaf.
+
+Preventive Care:
+- Continue current care practices
+- Monitor weekly for early signs
+- Maintain proper spacing and airflow
+- Water consistently at soil level
+- Remove lower leaves touching ground
+
+Next Steps:
+- Check other plants in your garden
+- Keep records in your dashboard
+- Schedule next inspection in 2 weeks
+
+DESIGN SPECIFICATIONS
+Layout:
+
+Maximum width: 1200px, centered
+Grid layout: 2 columns on desktop, single column on mobile
+Sticky side panel (optional): Quick actions + summary card
+
+Color Coding:
+
+Healthy: green-50, green-600, green-700
+Mild: yellow-50, yellow-600, yellow-700
+Moderate: orange-50, orange-600, orange-700
+Severe: red-50, red-600, red-700
+Info: blue-50, blue-600, blue-700
+
+Typography:
+
+Main heading: text-3xl font-bold
+Section headings: text-xl font-semibold
+Body text: text-base text-gray-700
+Confidence score: text-5xl font-bold
+
+Components:
+
+Use lucide-react icons (AlertCircle, CheckCircle, Info, Download, Share2, etc.)
+Progress bars for confidence scores
+Collapsible accordions for long treatment sections
+Tooltips for technical terms
+Badges for disease status and severity
+Cards with shadows for section grouping
+
+Interactions:
+
+Smooth scroll to sections
+Expandable/collapsible recommendations
+Image zoom on click
+Copy-to-clipboard for diagnosis ID
+Print-friendly CSS (hide buttons, optimize layout)
+
+Responsive:
+
+Mobile: Stack all sections vertically, full-width cards
+Tablet: 2-column grid where appropriate
+Desktop: Full layout with optional sidebar
+
+Accessibility:
+
+Screen reader announcements for disease status
+High contrast for color-blind users
+Keyboard navigation for all interactive elements
+Alt text for all images and charts
+
+
+DATA FLOW
+Receive props from parent route:
+javascript{
+  diagnosisId: "DG-2025-1122-A3F7",
+  uploadedImage: "blob:...",
+  timestamp: "2025-11-22T14:30:00Z",
+  result: {
+    diseaseStatus: "Diseased",
+    diseaseName: "Early Blight",
+    scientificName: "Alternaria solani",
+    confidence: 0.94,
+    severity: "Moderate",
+    cropType: "Tomato",
+    symptoms: [...],
+    recommendations: {
+      immediate: [...],
+      shortTerm: [...],
+      longTerm: [...]
+    },
+    heatmapUrl: "url_to_gradcam_image"
+  }
+}
+
+ADDITIONAL FEATURES
+
+Print/PDF Export: Generate clean PDF with logo, diagnosis ID, QR code
+Email Report: Send diagnosis to user's email
+Treatment Tracker: Add tasks to calendar/reminder system
+Cost Estimator: Calculate treatment costs based on field size
+Weather Integration: Show current weather and forecast (affects treatment timing)
+Nearby Suppliers: Map of agricultural stores selling recommended products
+Before/After Gallery: Show recovery timeline examples
+Social Sharing: Generate image card for sharing on WhatsApp/Facebook
+
+
+IMPLEMENTATION NOTES
+
+Create separate components for each section (modular design)
+Use React state for expand/collapse accordions
+Implement loading skeleton while fetching data
+Handle edge cases: No image, API error, low confidence
+Add animation on page load (fade-in, slide-up)
+Implement error boundary for graceful failure
+Cache results in localStorage for offline viewing
+
+
+EXPECTED OUTPUT
+Deliver ResultsPage.jsx as a complete React component with:
+
+All imports (React, React Router, lucide-react, etc.)
+Realistic content (no placeholders)
+Fully styled with Tailwind CSS
+Working interactive features
+Mobile responsive
+Proper error handling
+Comments explaining logic
+Export statement
