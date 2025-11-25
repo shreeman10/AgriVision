@@ -10,10 +10,58 @@ const DashboardPage = () => {
     const [selectedStat, setSelectedStat] = useState(null);
     const navigate = useNavigate();
 
+    const dummyDiagnoses = [
+        {
+            id: 1,
+            created_at: new Date().toISOString(),
+            image: 'https://images.unsplash.com/photo-1591857177580-dc82b9e4e1aa?q=80&w=2073&auto=format&fit=crop',
+            disease_name: 'Tomato___Early_blight',
+            confidence_score: 92.5,
+            result: {
+                Prediction: 'Tomato___Early_blight',
+                Confidence: 0.925,
+                Severity: 'Moderate',
+                Recommendation: 'Ensure spacing, apply neem oil. (Moderate stage: Take action soon.)',
+                GradCAM: '../assets/gradcam_output.png'
+            },
+            recommendations: 'Ensure spacing, apply neem oil. (Moderate stage: Take action soon.)'
+        },
+        {
+            id: 2,
+            created_at: new Date(Date.now() - 86400000).toISOString(), // Yesterday
+            image: 'https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?q=80&w=2070&auto=format&fit=crop',
+            disease_name: 'Potato___healthy',
+            confidence_score: 98.2,
+            result: {
+                Prediction: 'Potato___healthy',
+                Confidence: 0.982,
+                Severity: 'None',
+                Recommendation: 'Maintain hygiene and monitor leaf conditions.',
+                GradCAM: '../assets/gradcam_output.png'
+            },
+            recommendations: 'Maintain hygiene and monitor leaf conditions.'
+        },
+        {
+            id: 3,
+            created_at: new Date(Date.now() - 172800000).toISOString(), // 2 days ago
+            image: 'https://plus.unsplash.com/premium_photo-1664302152990-57e089d8923a?q=80&w=1932&auto=format&fit=crop',
+            disease_name: 'Apple___Black_rot',
+            confidence_score: 88.7,
+            result: {
+                Prediction: 'Apple___Black_rot',
+                Confidence: 0.887,
+                Severity: 'Severe',
+                Recommendation: 'Remove infected leaves, apply copper fungicide. (Severe stage: Consider removing affected leaves.)',
+                GradCAM: '../assets/gradcam_output.png'
+            },
+            recommendations: 'Remove infected leaves, apply copper fungicide. (Severe stage: Consider removing affected leaves.)'
+        }
+    ];
+
     const stats = [
         {
             title: 'Total Diagnoses',
-            value: '1,248',
+            value: '1,251',
             icon: '📸',
             color: 'bg-blue-50 text-blue-600',
             trend: { value: '12%', isPositive: true },
@@ -24,27 +72,28 @@ const DashboardPage = () => {
         },
         {
             title: 'Healthy Plants',
-            value: '856',
+            value: '857',
             icon: '🌿',
             color: 'bg-green-50 text-green-600',
             trend: { value: '5%', isPositive: true },
             delay: 200,
             type: 'pie',
             chartData: [
-                { label: 'Healthy', value: 856, color: '#22c55e' },
+                { label: 'Healthy', value: 857, color: '#22c55e' },
                 { label: 'At Risk', value: 120, color: '#eab308' }
             ]
         },
         {
             title: 'Diseases Detected',
-            value: '392',
+            value: '394',
             icon: '🦠',
             color: 'bg-red-50 text-red-600',
             trend: { value: '2%', isPositive: false },
             delay: 300,
             type: 'pie',
             chartData: [
-                { label: 'Early Blight', value: 150, color: '#ef4444' },
+                { label: 'Early Blight', value: 151, color: '#ef4444' },
+                { label: 'Black Rot', value: 101, color: '#7f1d1d' }, // Added Black Rot
                 { label: 'Powdery Mildew', value: 100, color: '#f97316' },
                 { label: 'Leaf Spot', value: 80, color: '#8b5cf6' },
                 { label: 'Other', value: 62, color: '#64748b' }
@@ -52,7 +101,7 @@ const DashboardPage = () => {
         },
         {
             title: 'Avg. Confidence',
-            value: '94.2%',
+            value: '93.1%', // Updated based on dummy data
             icon: '🎯',
             color: 'bg-purple-50 text-purple-600',
             trend: { value: '0.8%', isPositive: true },
@@ -93,7 +142,7 @@ const DashboardPage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* Left Column: Recent Diagnoses Table */}
                 <div className="lg:col-span-2">
-                    <RecentDiagnosesTable />
+                    <RecentDiagnosesTable data={dummyDiagnoses} />
                 </div>
 
                 {/* Right Column: Quick Actions or Additional Info */}

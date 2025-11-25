@@ -2,33 +2,14 @@ import React, { useState } from 'react';
 import {
     Search, Rocket, Camera, Leaf, BarChart3, HelpCircle, Mail,
     MessageSquare, Bug, Lightbulb, MessageCircle, Phone, ChevronDown,
-    ChevronUp, Check, X, ExternalLink, Clock, Users, Mic
+    ChevronUp, Check, X, ExternalLink, Clock, Users
 } from 'lucide-react';
 
 const HelpPage = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [expandedFaq, setExpandedFaq] = useState(null);
-    const [isListening, setIsListening] = useState(false);
 
-    const startListening = () => {
-        if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
-            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-            const recognition = new SpeechRecognition();
-            recognition.lang = 'en-US';
-            recognition.interimResults = false;
 
-            recognition.onstart = () => setIsListening(true);
-            recognition.onend = () => setIsListening(false);
-            recognition.onresult = (event) => {
-                const transcript = event.results[0][0].transcript;
-                setSearchQuery(transcript);
-            };
-
-            recognition.start();
-        } else {
-            alert("Your browser does not support voice search.");
-        }
-    };
 
     const categories = [
         { id: 'getting-started', icon: Rocket, title: 'Getting Started', desc: 'Learn how to upload your first image and get results', color: 'pink' },
@@ -108,7 +89,7 @@ const HelpPage = () => {
             {/* Hero Section with Search */}
             <section className="relative z-10 bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 text-white py-16 px-6">
                 <div className="max-w-4xl mx-auto text-center">
-                    <h1 className="text-5xl font-bold mb-4">AgriGuard Help Center</h1>
+                    <h1 className="text-5xl font-bold mb-4">AgriVision Help Center</h1>
                     <p className="text-xl mb-8 text-white/90">Get instant answers about plant disease detection</p>
 
                     {/* Search Bar */}
@@ -119,14 +100,8 @@ const HelpPage = () => {
                             placeholder="Search for help... (e.g., 'tomato blight', 'upload error')"
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="w-full pl-12 pr-12 py-4 rounded-xl text-gray-800 text-lg focus:outline-none focus:ring-4 focus:ring-white/30 shadow-lg"
+                            className="w-full pl-12 pr-4 py-4 rounded-xl text-gray-800 text-lg focus:outline-none focus:ring-4 focus:ring-white/30 shadow-lg"
                         />
-                        <button
-                            onClick={startListening}
-                            className={`absolute right-4 top-1/2 transform -translate-y-1/2 p-2 rounded-full transition-colors ${isListening ? 'bg-red-500 text-white animate-pulse' : 'text-gray-400 hover:text-pink-500'}`}
-                        >
-                            <Mic size={20} />
-                        </button>
                     </div>
 
                     {/* Quick Stats */}
@@ -349,7 +324,7 @@ const HelpPage = () => {
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {[
                             { icon: MessageSquare, title: 'Community Forum', desc: 'Ask questions and share experiences', action: 'Visit Forum', color: 'blue' },
-                            { icon: Bug, title: 'Report a Bug', desc: 'Help us improve AgriGuard', action: 'Submit Issue', color: 'red' },
+                            { icon: Bug, title: 'Report a Bug', desc: 'Help us improve AgriVision', action: 'Submit Issue', color: 'red' },
                             { icon: Lightbulb, title: 'Request Feature', desc: 'Suggest new functionality', action: 'Share Idea', color: 'yellow' },
                             { icon: Mail, title: 'Email Support', desc: 'support@agriguard.com', action: '24-48 hrs response', color: 'green' },
                             { icon: MessageCircle, title: 'Live Chat', desc: 'Mon-Fri, 9 AM - 5 PM EST', action: 'Start Chat', color: 'purple' },
@@ -374,9 +349,9 @@ const HelpPage = () => {
                         <h3 className="font-bold text-gray-800 mb-4">Follow Us</h3>
                         <div className="flex flex-wrap gap-4">
                             {[
-                                { name: 'Twitter', handle: '@AgriGuard' },
-                                { name: 'Facebook', handle: '/AgriGuard' },
-                                { name: 'YouTube', handle: '/AgriGuard' },
+                                { name: 'Twitter', handle: '@AgriVision' },
+                                { name: 'Facebook', handle: '/AgriVision' },
+                                { name: 'YouTube', handle: '/AgriVision' },
                                 { name: 'Discord', handle: 'Community Server' }
                             ].map((social, idx) => (
                                 <a

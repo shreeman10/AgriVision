@@ -3,17 +3,16 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AppProvider } from './context/AppContext';
 import { DiagnosisProvider } from './context/DiagnosisContext';
-import MainLayout from './components/Layouts/MainLayout';
-import HomePage from './pages/HomePage';
-import DiagnosisPage from './pages/DiagnosisPage';
-import ResultsPage from './pages/ResultsPage';
-import DashboardPage from './pages/DashboardPage';
-import ProfilePage from './pages/ProfilePage';
-import HelpPage from './pages/HelpPage';
-import DiseasesPage from './pages/DiseasesPage';
-import NotificationPage from './pages/NotificationPage';
 import { AuthProvider } from './context/AuthContext';
 import { NotificationProvider } from './context/NotificationContext';
+import MainLayout from './components/Layouts/MainLayout';
+import ProtectedRoute from './components/ProtectedRoute';
+import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
+import DiagnosisPage from './pages/DiagnosisPage';
+import DashboardPage from './pages/DashboardPage';
+import HelpPage from './pages/HelpPage';
+import DiseasesPage from './pages/DiseasesPage';
 
 function App() {
     return (
@@ -23,14 +22,43 @@ function App() {
                     <DiagnosisProvider>
                         <Router>
                             <Routes>
+                                {/* Public Routes */}
                                 <Route path="/" element={<MainLayout><HomePage /></MainLayout>} />
-                                <Route path="/results" element={<MainLayout><ResultsPage /></MainLayout>} />
-                                <Route path="/help" element={<MainLayout><HelpPage /></MainLayout>} />
-                                <Route path="/diseases" element={<MainLayout><DiseasesPage /></MainLayout>} />
-                                <Route path="/notifications" element={<MainLayout><NotificationPage /></MainLayout>} />
-                                <Route path="/profile" element={<MainLayout><ProfilePage /></MainLayout>} />
-                                <Route path="/diagnosis" element={<DiagnosisPage />} />
-                                <Route path="/dashboard" element={<DashboardPage />} />
+                                <Route path="/login" element={<LoginPage />} />
+
+                                {/* Protected Routes */}
+                                <Route
+                                    path="/dashboard"
+                                    element={
+                                        <ProtectedRoute>
+                                            <DashboardPage />
+                                        </ProtectedRoute>
+                                    }
+                                />
+                                <Route
+                                    path="/diagnosis"
+                                    element={
+                                        <ProtectedRoute>
+                                            <DiagnosisPage />
+                                        </ProtectedRoute>
+                                    }
+                                />
+                                <Route
+                                    path="/diseases"
+                                    element={
+                                        <ProtectedRoute>
+                                            <MainLayout><DiseasesPage /></MainLayout>
+                                        </ProtectedRoute>
+                                    }
+                                />
+                                <Route
+                                    path="/help"
+                                    element={
+                                        <ProtectedRoute>
+                                            <MainLayout><HelpPage /></MainLayout>
+                                        </ProtectedRoute>
+                                    }
+                                />
                             </Routes>
                         </Router>
                         <Toaster position="top-right" />

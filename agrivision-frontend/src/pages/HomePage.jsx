@@ -22,7 +22,7 @@ const HomePage = () => {
                         </h1>
 
                         <p className="text-xl text-gray-600 max-w-lg leading-relaxed">
-                            From detection to treatment, AgriGuard brings every part of your crop management into one organized, intelligent space.
+                            From detection to treatment, AgriVision brings every part of your crop management into one organized, intelligent space.
                         </p>
 
                         <div className="flex items-center gap-4 pt-4">

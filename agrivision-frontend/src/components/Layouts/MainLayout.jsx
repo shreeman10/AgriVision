@@ -9,7 +9,7 @@ const MainLayout = ({ children }) => {
                 {children}
             </main>
             <footer className="glass mt-auto p-4 text-center text-gray-700">
-                &copy; 2025 AgriGuard
+                &copy; 2025 AgriVision
             </footer>
         </div>
     );

@@ -1,22 +1,19 @@
 {
-  "name": "agriguard-frontend",
+  "name": "agrivision-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "axios": "^1.6.0",
     "chart.js": "^4.5.1",
-    "firebase": "^12.6.0",
     "html2canvas": "^1.4.1",
     "jspdf": "^3.0.4",
     "jspdf-autotable": "^5.0.2",
-    "leaflet": "^1.9.4",
     "lucide-react": "^0.554.0",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.3.1",
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.3.8",
     "react-hot-toast": "^2.6.0",
-    "react-leaflet": "^5.0.0",
     "react-router-dom": "^6.20.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"

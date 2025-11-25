@@ -3,15 +3,20 @@ import { getRecentAnalyses } from '../../services/diagnosisService';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 
-const RecentDiagnosesTable = () => {
+const RecentDiagnosesTable = ({ data }) => {
     const [diagnoses, setDiagnoses] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchDiagnoses = async () => {
-            try {
-                const data = await getRecentAnalyses();
+            if (data) {
                 setDiagnoses(data);
+                setLoading(false);
+                return;
+            }
+            try {
+                const result = await getRecentAnalyses();
+                setDiagnoses(result);
             } catch (error) {
                 console.error('Failed to fetch diagnoses:', error);
             } finally {
@@ -20,7 +25,7 @@ const RecentDiagnosesTable = () => {
         };
 
         fetchDiagnoses();
-    }, []);
+    }, [data]);
 
     const getStatusColor = (status) => {
         if (!status) return 'bg-gray-100 text-gray-700';
@@ -45,7 +50,7 @@ const RecentDiagnosesTable = () => {
         // Add title
         doc.setFontSize(18);
         doc.setTextColor(40);
-        doc.text('AgriGuard - Recent Diagnoses Report', 14, 22);
+        doc.text('AgriVision - Recent Diagnoses Report', 14, 22);
 
         // Add date
         doc.setFontSize(10);
@@ -85,7 +90,7 @@ const RecentDiagnosesTable = () => {
         });
 
         // Save the PDF
-        doc.save(`AgriGuard_Diagnoses_${new Date().toISOString().split('T')[0]}.pdf`);
+        doc.save(`AgriVision_Diagnoses_${new Date().toISOString().split('T')[0]}.pdf`);
     };
 
     return (

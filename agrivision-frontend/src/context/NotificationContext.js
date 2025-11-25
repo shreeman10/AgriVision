@@ -37,7 +37,7 @@ const generateMockNotifications = () => {
         {
             id: now - 1,
             type: 'success',
-            title: 'Welcome to AgriGuard!',
+            title: 'Welcome to AgriVision!',
             message: 'Your account has been created successfully. Start diagnosing plant diseases now.',
             timestamp: new Date(now - 5 * 60000).toISOString(),
             read: false,

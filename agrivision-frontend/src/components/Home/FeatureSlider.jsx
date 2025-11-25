@@ -79,7 +79,7 @@ const FeatureSlider = () => {
 
             <div className="relative z-10 max-w-6xl mx-auto px-6">
                 <div className="text-center mb-12">
-                    <h2 className="text-4xl font-bold text-gray-900 mb-4">Explore AgriGuard Features</h2>
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4">Explore AgriVision Features</h2>
                     <p className="text-lg text-gray-600">Discover all the powerful tools at your fingertips</p>
                 </div>
 

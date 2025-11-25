@@ -743,7 +743,7 @@ const DiseasesPage = () => {
                         <h1 className="text-5xl font-bold">Disease Database</h1>
                     </div>
                     <p className="text-xl text-white/90 mb-8">
-                        Comprehensive guide to plant diseases detectable by AgriGuard AI
+                        Comprehensive guide to plant diseases detectable by AgriVision AI
                     </p>
 
                     {/* Search and Filters */}
