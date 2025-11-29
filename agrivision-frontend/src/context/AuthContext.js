@@ -33,13 +33,16 @@ export function AuthProvider({ children }) {
     };
 
     const login = async (username, password) => {
+        const cleanUsername = username.trim();
+        const cleanPassword = password.trim();
+
         try {
             const response = await fetch('http://localhost:8000/api/login/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ username, password }),
+                body: JSON.stringify({ username: cleanUsername, password: cleanPassword }),
             });
 
             if (!response.ok) {
@@ -54,9 +57,11 @@ export function AuthProvider({ children }) {
             localStorage.setItem('userInfo', JSON.stringify(data.user));
             
             setCurrentUser(data.user);
+            toast.success('Logged in successfully');
             return data;
         } catch (error) {
             console.error('Login error:', error);
+            toast.error(error.message || 'Login failed');
             throw error;
         }
     };

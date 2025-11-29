@@ -122,15 +122,7 @@ const LoginPage = () => {
                     </div>
                 </div>
 
-                {/* Demo Credentials Info (for development) */}
-                {process.env.NODE_ENV === 'development' && (
-                    <div className="mt-4 glass p-4 rounded-xl text-center">
-                        <p className="text-xs text-gray-500 mb-2">Development Mode - Demo Credentials:</p>
-                        <p className="text-xs font-mono text-gray-700">
-                            Username: <span className="font-bold">hena</span> | Password: <span className="font-bold">henajs40@newagriapp</span>
-                        </p>
-                    </div>
-                )}
+
             </div>
         </div>
     );
